@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Finde die richtige Flaschenpost</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="finde-die-flaschenpost.png" alt="Flaschenpost Bild">
+
+    <!-- Positionen der Flaschen (angepasst an dein Bild) -->
+    <div class="hotspot" style="top: 60%; left: 10%; width: 5%; height: 10%;" onclick="playAudio('niete1.mp3')"></div>
+    <div class="hotspot" style="top: 40%; left: 28%; width: 5%; height: 10%;" onclick="playAudio('niete2.mp3')"></div>
+    <div class="hotspot" style="top: 68%; left: 43%; width: 5%; height: 10%;" onclick="playAudio('brief.mp3')"></div>
+    <div class="hotspot" style="top: 30%; left: 75%; width: 5%; height: 10%;" onclick="playAudio('niete3.mp3')"></div>
+  </div>
+
+  <audio id="player" src=""></audio>
+
+  <script>
+    function playAudio(file) {
+      const player = document.getElementById('player');
+      player.src = file;
+      player.play();
+    }
+  </script>
+</body>
+</html>
